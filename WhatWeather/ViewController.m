@@ -15,6 +15,7 @@
 
 @implementation ViewController
 
+
 NSString *cellId = @"cellId";
 // My URL
 NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4dde8fd153715180512&q=Dnipropetrovsk";
@@ -32,7 +33,8 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
     [self navigationSetup];
 //    [self showDictionary];
     
-    [self jsonRequestWithURL:urlString];
+//    [self jsonRequestWithURL:urlString];
+    [self myArray:[self jsonRequestWithURL:urlString]];
     
 }
 
@@ -52,12 +54,59 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
 //    region = "Dnipropetrovs'ka Oblast'";
 //    "tz_id" = "Europe/Kiev";
     //
-    id val = [[allElements allValues] objectAtIndex:1];
-    NSLog(@"Your value is ----- %@", val);
+//    id val = [[allElements allValues] objectAtIndex:1];
+//    id val2 = []allElements al;
+//    NSLog(@"Your value is ----- %@", val);
     
+    
+    
+//    NSMutableArray *arrForA = [[NSMutableArray alloc] initWithObjects:@"Apple", @"Ant", @"Arc", nil];
+//    NSMutableArray *arrForB = [[NSMutableArray alloc] initWithObjects:@"Ball", @"Bat", @"Box", nil];
+//    NSMutableDictionary *dictAlpha = [[NSMutableDictionary alloc] initWithObjectsAndKeys: arrForA, @"A", arrForB, @"B", nil];
+//    NSLog(@"%@",dictAlpha); // 1
+//
+//    NSArray *keys=[allElements allKeys];
+//    NSArray *value=[allElements valueForKey:@"location"];
+//
+//    NSLog(@"my keys is %@", keys);
+//    NSLog(@"my value is %@", value);
+//
+//
+//    for (id obj in value) {
+//        NSLog(@"obj: %@", obj);
+//    }
+//
+//
+//
+    
+//    for (int i = 0; i< keys.count; i++) {
+//
+//        NSArray *arrVal = [allElements objectForKey:keys[i]];
+//
+//        for (int j=0; j<arrVal.count; j++) {
+//            NSLog(@"%@ for %@", keys[i], arrVal[j]); // 2
+//        }
+//
+//    }
     
     return allElements;
 }
+
+-(NSArray *) myArray:(NSMutableDictionary *)dictionary {
+    NSArray *keys = [dictionary allKeys];
+    NSArray *value = [dictionary valueForKey:@"location"];
+    
+    NSLog(@"my keys is %@", keys);
+    NSLog(@"my value is %@", value);
+    
+    
+    for (id obj in value) {
+        NSLog(@"obj: %@", obj);
+    }
+    
+    return value;
+}
+
 
 -(void) showDictionary {
     for(NSString *key in [[self jsonRequestWithURL:urlString] allKeys]) {
