@@ -21,7 +21,7 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
 
 
 - (void)navigationSetup {
-    self.navigationItem.title = @"What weather?";
+    self.navigationItem.title = @"What weather in city?";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
 }
 
@@ -30,14 +30,32 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
     
     
     [self navigationSetup];
-    [self showDictionary];
-
+//    [self showDictionary];
+    
+    [self jsonRequestWithURL:urlString];
+    
 }
 
 - (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url {
     NSError *error;
     NSData *jsonData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:url]];
     NSMutableDictionary *allElements = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    
+    
+    // 1 element in dictionary
+//    country = Ukraine;
+//    lat = "48.45";
+//    localtime = "2019-01-15 15:47";
+//    "localtime_epoch" = 1547560039;
+//    lon = "34.98";
+//    name = Dnipropetrovsk;
+//    region = "Dnipropetrovs'ka Oblast'";
+//    "tz_id" = "Europe/Kiev";
+    //
+    id val = [[allElements allValues] objectAtIndex:1];
+    NSLog(@"Your value is ----- %@", val);
+    
+    
     return allElements;
 }
 
@@ -48,8 +66,6 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
 }
 
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
@@ -58,7 +74,7 @@ NSString *urlString = @"https://api.apixu.com/v1/current.json?key=c5d57f8a831c4d
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     
     cell.textLabel.text = @"Text";
-    
+//    cell.textLabel.text =
     return cell;
 }
 
