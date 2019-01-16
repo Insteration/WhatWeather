@@ -18,7 +18,6 @@
     NSArray *weatherData;
 }
 
-
 //NSString *cellId = @"cellId";
 // My URL
 NSString *urlString = @"https://jsonplaceholder.typicode.com/todos/1";
@@ -39,6 +38,9 @@ NSString *urlString = @"https://jsonplaceholder.typicode.com/todos/1";
     
 //    [self jsonRequestWithURL:urlString];
     weatherData = [self myArray:[self jsonRequestWithURL:urlString]];
+    for (id obj in weatherData) {
+        NSLog(@"arrays is %@", obj);
+    }
     
 }
 
@@ -55,30 +57,15 @@ NSString *urlString = @"https://jsonplaceholder.typicode.com/todos/1";
     NSArray *keys = [dictionary allKeys];
 //    NSArray *value = [dictionary valueForKey:@"location"];
     NSArray *value = [dictionary allValues];
-
-
-    for (id obj in keys) {
-        NSLog(@"keys: %@", obj);
-    }
-    
-    for (id obj in value) {
-        NSLog(@"value: %@", obj);
-    }
+    NSMutableArray<NSString *> *onlyStrings = [dictionary allValues];
     
     return keys;
 }
 
-
--(void) showDictionary {
-    for(NSString *key in [[self jsonRequestWithURL:urlString] allKeys]) {
-        NSLog(@"%@",[[self jsonRequestWithURL:urlString] objectForKey:key]);
-    }
-}
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [weatherData count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"cellId";
@@ -89,6 +76,7 @@ NSString *urlString = @"https://jsonplaceholder.typicode.com/todos/1";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
 
+//    cell.textLabel.text = @"crt";
     cell.textLabel.text = [weatherData objectAtIndex:indexPath.row];
     return cell;
 }
