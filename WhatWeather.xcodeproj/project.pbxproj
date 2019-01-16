@@ -13,7 +13,6 @@
 		D961B6C021EE10C800E633D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961B6BF21EE10C800E633D4 /* Assets.xcassets */; };
 		D961B6C321EE10C800E633D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D961B6C121EE10C800E633D4 /* LaunchScreen.storyboard */; };
 		D961B6C621EE10C800E633D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D961B6C521EE10C800E633D4 /* main.m */; };
-		D961B6CE21EE147300E633D4 /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = D961B6CD21EE147300E633D4 /* WeatherData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +26,6 @@
 		D961B6C221EE10C800E633D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D961B6C421EE10C800E633D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D961B6C521EE10C800E633D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D961B6CC21EE147300E633D4 /* WeatherData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = "<group>"; };
-		D961B6CD21EE147300E633D4 /* WeatherData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +62,6 @@
 				D961B6B721EE10C700E633D4 /* AppDelegate.m */,
 				D961B6B921EE10C700E633D4 /* ViewController.h */,
 				D961B6BA21EE10C700E633D4 /* ViewController.m */,
-				D961B6CC21EE147300E633D4 /* WeatherData.h */,
-				D961B6CD21EE147300E633D4 /* WeatherData.m */,
 				D961B6BC21EE10C700E633D4 /* Main.storyboard */,
 				D961B6BF21EE10C800E633D4 /* Assets.xcassets */,
 				D961B6C121EE10C800E633D4 /* LaunchScreen.storyboard */,
@@ -148,7 +143,6 @@
 			files = (
 				D961B6BB21EE10C700E633D4 /* ViewController.m in Sources */,
 				D961B6C621EE10C800E633D4 /* main.m in Sources */,
-				D961B6CE21EE147300E633D4 /* WeatherData.m in Sources */,
 				D961B6B821EE10C700E633D4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
